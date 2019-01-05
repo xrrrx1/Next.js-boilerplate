@@ -1,8 +1,9 @@
 module.exports = {
-  extends: "airbnb",
-  parser: "babel-eslint",
+  extends: 'airbnb',
+  parser: 'babel-eslint',
   rules: {
-    "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }],
-    "react/react-in-jsx-scope": 0,
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
+    'react/react-in-jsx-scope': 0,
+    'linebreak-style': ['error', 'windows'],
   },
 };
