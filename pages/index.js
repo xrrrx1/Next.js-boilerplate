@@ -1,5 +1,6 @@
 import React from 'react';
+import App from '../containers/App';
 
-const Index = () => <div>Next default</div>;
+const Index = () => <App />;
 
 export default Index;
