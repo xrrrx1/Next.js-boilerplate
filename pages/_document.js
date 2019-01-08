@@ -1,15 +1,7 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 // Import styled components ServerStyleSheet
-import { ServerStyleSheet, createGlobalStyle, ThemeProvider } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    color: ${props => (props.blue ? 'blue' : 'black')};
-    font-family: ${props => props.theme.fontFamily};
-    overflow-y: scroll;
-  }
-`;
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -30,19 +22,14 @@ export default class MyDocument extends Document {
     return (
       <html lang="eu">
         <Head>
-          <title>My page</title>
           {/* Output the styles in the head  */}
           {this.props.styleTags}
         </Head>
         <body>
-          {/* Output Theme and Global style in the body  */}
-          <ThemeProvider theme={{ fontFamily: 'Georgia, Times New Roman, Times, serif' }}>
-            <React.Fragment>
-              <GlobalStyle blue />
-              <Main />
-              <NextScript />
-            </React.Fragment>
-          </ThemeProvider>
+          <React.Fragment>
+            <Main />
+            <NextScript />
+          </React.Fragment>
         </body>
       </html>
     );

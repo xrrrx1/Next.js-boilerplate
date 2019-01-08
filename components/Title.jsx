@@ -1,14 +1,20 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { HeadersColorContext } from '../context/context';
 
 const StyledTitle = styled.h1`
-  color: red;
+  color: ${props => props.headerColor};
 `;
 
-const Title = () => (
-  <React.Fragment>
-    <StyledTitle>styled test</StyledTitle>
-  </React.Fragment>
-);
+const Title = () => {
+  const HeadersColor = useContext(HeadersColorContext);
+
+  return (
+    <div>
+      <StyledTitle headerColor={HeadersColor}>styled test</StyledTitle>
+    </div>
+  );
+};
 
 export default Title;

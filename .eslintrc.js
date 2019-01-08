@@ -4,6 +4,6 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'react/react-in-jsx-scope': 0,
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': 0,
   },
 };
